@@ -33,6 +33,7 @@
   let entered=false;
   let loadedBlock="";
   let manualOverride=false;
+  let manualOverrideBlock="";
   let lastVideoId="";
   let lastTitle="";
 
@@ -81,25 +82,29 @@
 
   function loadRolling(force){
     if(!ready)return;
+    const block=currentBlock();
     manualOverride=!!force;
-    loadedBlock=manualOverride?"manual-latest":currentBlock().id;
+    manualOverrideBlock=manualOverride?block.id:"";
+    loadedBlock=manualOverride?"manual-latest":block.id;
     els.refresh.textContent="Official CNN uploads · newest first";
-    blockLabels(currentBlock());
+    blockLabels(block);
     player.loadPlaylist({listType:"playlist",list:CNN_UPLOADS,index:0,startSeconds:0});
   }
 
   function loadBourdain(){
     if(!ready)return;
     manualOverride=false;
+    manualOverrideBlock="";
     loadedBlock="bourdain";
     els.refresh.textContent="Official CNN Parts Unknown archive queue";
     blockLabels(currentBlock());
-    player.loadPlaylist({playlist:BOURDAIN_IDS,index:archiveIndex(),startSeconds:0});
+    player.loadPlaylist(BOURDAIN_IDS,archiveIndex(),0);
   }
 
   function loadBlock(block){
     if(!ready||!entered)return;
     manualOverride=false;
+    manualOverrideBlock="";
     loadedBlock=block.id;
     if(block.id==="bourdain") loadBourdain();
     else loadRolling(false);
@@ -121,6 +126,11 @@
   function tick(){
     updateClock();
     const block=currentBlock();
+    if(manualOverride&&manualOverrideBlock!==block.id){
+      manualOverride=false;
+      manualOverrideBlock="";
+      loadedBlock="";
+    }
     document.querySelectorAll(".guide-row").forEach(row=>row.classList.toggle("current",row.dataset.guide===block.id));
     if(!manualOverride) blockLabels(block);
     if(entered&&ready&&!manualOverride&&loadedBlock!==block.id) loadBlock(block);
