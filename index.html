@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#b30b1b">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>CNN World News — Rolling Top Stories</title>
+  <meta name="description" content="A rolling CNN world-news channel driven by CNN's continuously updated official video feed, with scheduled nighttime long-form blocks.">
+  <link rel="canonical" href="https://www-infinity4.github.io/CNN/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CNN World News">
+  <meta property="og:title" content="CNN World News — Rolling Top Stories">
+  <meta property="og:description" content="Current CNN video stories by day, scheduled CNN long-form and Parts Unknown archive blocks at night.">
+  <meta property="og:url" content="https://www-infinity4.github.io/CNN/?card=20260913a">
+  <meta property="og:image" content="https://www-infinity4.github.io/CNN/assets/cnn-world-social.png?v=20260913a">
+  <meta property="og:image:secure_url" content="https://www-infinity4.github.io/CNN/assets/cnn-world-social.png?v=20260913a">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="CNN World News rolling top stories preview">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CNN World News — Rolling Top Stories">
+  <meta name="twitter:description" content="Current CNN video stories by day and long-form archive programming at night.">
+  <meta name="twitter:image" content="https://www-infinity4.github.io/CNN/assets/cnn-world-social.png?v=20260913a">
+  <link rel="stylesheet" href="styles.css?v=20260913a">
+  <script>if(!location.search&&history.replaceState)history.replaceState(null,"",location.pathname+"?card=20260913a"+location.hash);</script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="#top" aria-label="CNN World News home"><span class="logo">CNN</span><span class="brand-copy">WORLD NEWS<small>Rolling top stories</small></span></a>
+    <details class="channel-menu"><summary aria-label="Open channel remote">☰ <span>Channels</span></summary><nav aria-label="Switch channels"></nav></details>
+    <div class="air"><span></span> ON AIR</div>
+    <time id="stationClock">--:-- --</time>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="status-line"><span id="modeLabel">LIVE CNN FEED</span><span id="refreshStatus">Official CNN uploads · newest first</span></div>
+      <div class="headline-row"><div><p id="blockLabel">WORLD DESK</p><h1 id="nowTitle">Loading CNN's latest stories…</h1></div><div class="block-time" id="blockTime">Rolling feed</div></div>
+      <div class="screen-shell">
+        <div id="player" class="player" aria-label="CNN video player"></div>
+        <button id="enterButton" class="enter-button" type="button"><strong>Enter CNN World News</strong><span>Start with the newest available CNN story</span></button>
+      </div>
+      <div class="controls">
+        <button id="newestButton" type="button">Newest story</button>
+        <button id="nextButton" type="button">Next story</button>
+        <button id="shareButton" class="share" type="button">Share · +1/10 ⭐</button>
+        <button id="walletButton" class="wallet" type="button">Wallet ⭐ 0.0</button>
+        <span id="shareStatus" role="status" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="CNN channel behavior">
+      <div><strong>BREAKING / WORLD / U.S. / POLITICS / BUSINESS / SCIENCE</strong><span>Daytime programming is not pre-scheduled. The player starts from CNN's newest official uploads and keeps advancing through the current queue.</span></div>
+    </section>
+
+    <section class="cards" aria-labelledby="flowHeading">
+      <div class="section-head"><p>HOW THIS CHANNEL RUNS</p><h2 id="flowHeading">News first. Long-form at night.</h2></div>
+      <div class="card-grid">
+        <article><span>DAY</span><h3>Rolling top stories</h3><p>5:00 AM–8:00 PM. The feed is sourced from CNN's official uploads playlist, so newly published reporting enters the channel without rebuilding a weekly schedule.</p></article>
+        <article><span>8 PM</span><h3>Parts Unknown archive</h3><p>A scheduled Anthony Bourdain / Parts Unknown block using official CNN archive videos and clips.</p></article>
+        <article><span>10 PM</span><h3>CNN long-form</h3><p>Originals, interviews, explainers and longer reporting. Breaking stories can still take priority when the live queue is refreshed.</p></article>
+        <article><span>OVERNIGHT</span><h3>World desk</h3><p>Midnight–5:00 AM returns to the rolling news queue for overnight developments around the world.</p></article>
+      </div>
+    </section>
+
+    <section class="guide" aria-labelledby="guideHeading">
+      <div class="section-head guide-head"><div><p>DAILY FRAMEWORK</p><h2 id="guideHeading">CNN guide</h2></div><span id="guideDate"></span></div>
+      <div id="guideRows" class="guide-rows"></div>
+    </section>
+  </main>
+
+  <section class="channel-directory" aria-labelledby="directoryHeading"><p id="directoryHeading">Choose another channel</p><nav aria-label="All channels"></nav></section>
+  <footer><strong>CNN WORLD NEWS</strong><span>Video playback uses official CNN sources hosted by YouTube. Availability is controlled by the source publisher.</span></footer>
+
+  <script src="channels.js?v=20260913a"></script>
+  <script src="app.js?v=20260913a"></script>
+</body>
+</html>
